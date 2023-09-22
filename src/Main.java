@@ -5,21 +5,25 @@ public class Main {
     {
         Scanner in = new Scanner(System.in);
 
-        double itemPrice = 0;
-        double salesTax = 0;
-        double totalPrice = 0;
+        double itemPrice = 0.0;
+        double salesTax = 0.0;
+        double totalPrice = 0.0;
 
-        System.out.println("Enter price of item: ");
+        System.out.print("Enter price of item: ");
+        itemPrice = in.nextDouble();
 
-        if(itemPrice >=100)
+        if(itemPrice <=100)
         {
             in.nextLine();
             System.out.println("No sales tax ");
         }
-        else{
+        else
+        {
             salesTax = itemPrice * 0.02;
-            System.out.println("Your sales tax is " + salesTax);
+            in.nextLine();
+            System.out.println("Your sales tax is: " + salesTax);
         }
+
         totalPrice = itemPrice + salesTax;
         System.out.println("The total price is " + totalPrice);
     }
