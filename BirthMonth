@@ -1,28 +1,25 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        int birthMonth = 1 - 12;
-        String trash = "";
+        int birthMonth = 0;
+
         System.out.print("Enter your birth month number [1 - 12]: ");
+        birthMonth = in.nextInt();
 
-
-        if(in.hasNextInt())
+        if (birthMonth <= 12 && birthMonth > 0)
         {
-            birthMonth = in.nextInt();
             in.nextLine();
             System.out.println("You said your birth month is: " + birthMonth);
         }
-        else
-        {
-            trash = in.nextLine();
-            System.out.println("You entered an incorrect month value: " + trash);
+         else
+         {
+             in.nextLine();
+            System.out.println("You entered an incorrect month value");
+         }
+
         }
 
-
-
     }
-}
